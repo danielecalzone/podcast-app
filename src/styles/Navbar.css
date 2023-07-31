@@ -1,0 +1,36 @@
+/* Styles for the navbar */
+.navbar {
+    display: flex; /* Use flexbox to arrange the content */
+    justify-content: space-between; /* Space the items evenly between the start and end of the container */
+    align-items: center; /* Center the items vertically within the navbar */
+    background-color: #fff; /* Set a cool background color for the navbar */
+    padding: 10px 20px; /* Add padding to the navbar */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the navbar */
+    position: sticky; /* Make the navbar stick to the top of the viewport when scrolling */
+    top: 0; /* Position the navbar at the top of the viewport */
+    left: 0; /* Position the navbar at the left side of the viewport */
+    width: 100%; /* Set the width of the navbar to cover the entire viewport */
+    z-index: 999; /* Set a high z-index to ensure the navbar is on top of other elements */
+}
+
+/* Styles for the navbar title */
+.navbar-title {
+    color: #fff; /* Set the text color for the title to white */
+    font-size: 24px; /* Set the font size of the title */
+    font-weight: bold; /* Set the font weight of the title to bold */
+}
+
+/* Styles for the navbar links container */
+.navbar-links {
+    display: flex; /* Use flexbox to arrange the links horizontally */
+    align-items: center; /* Center the links vertically within the navbar */
+}
+
+/* Styles for the navbar links */
+.navbar-links a {
+    color: #2577BE; /* Set the text color for the links */
+    margin-left: 20px; /* Add spacing between the links */
+    text-decoration: none; /* Remove the default underline from the links */
+    font-size: 24px; /* Set the font size of the links */
+    font-weight: bold; /* Set the font weight of the links to bold */
+}

@@ -1,0 +1,134 @@
+/* Global styles for the entire body of the document */
+body {
+    overflow-x: hidden; /* Hide horizontal overflow to prevent horizontal scrolling */
+}
+
+/* Styles for the h1 elements */
+h1 {
+    color: #2577BE; /* Set the color of h1 elements to a specific blue color */
+}
+
+/* Styles for anchor (link) elements */
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: inherit; /* Inherit the text-decoration from the parent element */
+}
+
+/* Styles for the home container */
+.home-container {
+    padding: 20px; /* Add some padding around the container */
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Styles for the search bar */
+.search-bar {
+    display: flex; /* Use flexbox to arrange the content */
+    justify-content: flex-end; /* Align the content to the right side of the container */
+    align-items: center; /* Center the items vertically within the container */
+    margin-bottom: 20px; /* Add some margin at the bottom of the search bar */
+}
+
+/* Styles for the input inside the search bar */
+.search-bar input {
+    padding: 8px; /* Add padding inside the input field */
+    border: 1px solid #ccc; /* Add a 1px solid border with light gray color */
+    border-radius: 4px; /* Add rounded corners to the input field */
+    width: 200px; /* Set a fixed width for the input field */
+}
+
+/* Styles for the search number badge */
+.search-number {
+    margin-right: 8px; /* Add some margin to the right of the badge */
+    padding: 4px; /* Add padding inside the badge */
+    border-radius: 20px; /* Add rounded corners to the badge to make it circular */
+    background-color: #2577BE; /* Set the background color of the badge to a specific blue color */
+    color: #fff; /* Set the text color to white */
+    font-weight: bold; /* Add bold font weight to the text */
+}
+
+/* Styles for the podcast cards container */
+.podcast-cards-container {
+    display: flex; /* Use flexbox to arrange the content */
+    flex-wrap: wrap; /* Wrap the items to the next line if necessary */
+    justify-content: space-between; /* Distribute the items evenly with space between them */
+    margin: -10px; /* Add negative margin to counteract the margin of .podcast-card */
+}
+
+/* Styles for each individual podcast card */
+.podcast-card {
+    width: calc(20% - 20px); /* Set the width of each card to take up 20% of the available width with some margin */
+    margin: 10px; /* Add some margin around each card */
+    padding: 10px; /* Add padding inside each card */
+    background-color: #fff; /* Set the background color of each card to white */
+    border-radius: 8px; /* Add rounded corners to each card */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to each card */
+    transition: box-shadow 0.3s ease; /* Add a smooth transition effect for the box shadow */
+}
+
+/* Styles for each podcast card on hover (when the user hovers over the card) */
+.podcast-card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Add an elevated shadow effect on hover */
+}
+
+/* Styles for the image container that holds the podcast image */
+.image-container {
+    display: flex; /* Use flexbox to arrange the content */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    border-radius: 50%; /* Make the container circular by adding rounded corners */
+    overflow: hidden; /* Hide any content that overflows the container */
+    height: 120px; /* Set a fixed height for the image container */
+}
+
+/* Styles for the podcast image inside the image container */
+.image-container img {
+    max-width: 100%; /* Set the maximum width of the image to 100% of the container */
+    max-height: 100%; /* Set the maximum height of the image to 100% of the container */
+    object-fit: cover; /* Make the image cover the entire container while maintaining its aspect ratio */
+    border-radius: 50%; /* Add rounded corners to the image to make it circular */
+}
+
+/* Styles for the podcast details container */
+.podcast-details {
+    margin-top: 10px; /* Add some margin at the top of the podcast details */
+}
+
+/* Styles for the h3 elements inside the podcast details container */
+.podcast-details h3 {
+    font-size: 18px; /* Set the font size of h3 elements */
+    font-weight: bold; /* Add bold font weight to h3 elements */
+    margin: 0; /* Remove any margin around h3 elements */
+}
+
+/* Styles for the p elements inside the podcast details container */
+.podcast-details p {
+    font-size: 14px; /* Set the font size of p elements */
+    margin: 5px 0; /* Add some margin above and below each paragraph */
+}
+
+/* Media query for responsiveness: When the screen width is 1200px or less */
+@media screen and (max-width: 1200px) {
+    .podcast-card {
+        width: calc(25% - 20px); /* Adjust width to show 4 items per row */
+    }
+}
+
+/* Media query for responsiveness: When the screen width is 900px or less */
+@media screen and (max-width: 900px) {
+    .podcast-card {
+        width: calc(33.33% - 20px); /* Adjust width to show 3 items per row */
+    }
+}
+
+/* Media query for responsiveness: When the screen width is 600px or less */
+@media screen and (max-width: 600px) {
+    .podcast-card {
+        width: 50%; /* Adjust width to show 2 items per row */
+    }
+}
+
+
+
+
+
