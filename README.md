@@ -19,12 +19,29 @@ Podcaster is a web application that allows users to explore and listen to a wide
 - HTML: Markup language for structuring the app's content.
 - CSS: Styling language for visually enhancing the app.
 
-## Getting Started
+## How to Execute the App in Development Mode
 
 1. Clone the repository: `git clone https://github.com/danielecalzone/podcast-app.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 4. Open the app in your browser: `http://localhost:3000`
+
+## How to Execute the App in Production Mode
+
+To run the app in production mode, follow these steps:
+
+1. Build the production version of the app by running the following command: `npm run build`
+   
+This will create an optimized build of the app in the build directory.
+
+2. Install a static server to serve the built files. For example, you can use serve: `npm install -g serve`
+  
+3. Start the static server and serve the production build: `serve -s build`
+4. Open your browser and visit the provided URL to access the app in production mode.
+   The app is now running in production mode and is optimized for better performance.
+
+Note: In production mode, the app's files are minified, and unnecessary development code is removed, resulting in a smaller and more efficient bundle. 
+This mode is recommended for deployment to production servers.
 
 ## Project Structure
 
