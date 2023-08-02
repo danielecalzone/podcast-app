@@ -2,6 +2,10 @@
 
 Podcaster is a web application that allows users to explore and listen to a wide range of podcasts. Users can discover top podcasts, view podcast details, and listen to episodes. The app provides a user-friendly interface for seamless podcast browsing and listening.
 
+## Live Demo
+
+You can try the live demo of the app [here](https://podcaster-daniele-calzone.netlify.app/).
+
 ## Features
 
 -  Top Podcasts: Displays a list of 100 podcasts in various categories.
