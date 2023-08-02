@@ -1,8 +1,3 @@
-/* Global styles for the entire body of the document */
-body {
-    overflow-x: hidden; /* Hide horizontal overflow to prevent horizontal scrolling */
-}
-
 /* Styles for the h1 elements */
 h1 {
     color: #2577BE; /* Set the color of h1 elements to a specific blue color */

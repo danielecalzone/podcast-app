@@ -9,9 +9,11 @@
     position: sticky; /* Make the navbar stick to the top of the viewport when scrolling */
     top: 0; /* Position the navbar at the top of the viewport */
     left: 0; /* Position the navbar at the left side of the viewport */
-    width: 100%; /* Set the width of the navbar to cover the entire viewport */
     z-index: 999; /* Set a high z-index to ensure the navbar is on top of other elements */
+    max-width: 100%; /* Set the maximum width of the navbar to cover the entire viewport */
+    overflow: hidden; /* Hide any content that overflows the navbar horizontally */
 }
+
 
 /* Styles for the navbar title */
 .navbar-title {
@@ -34,3 +36,51 @@
     font-size: 24px; /* Set the font size of the links */
     font-weight: bold; /* Set the font weight of the links to bold */
 }
+
+/* Media query for responsiveness: When the screen width is 900px or less */
+@media screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column; /* Change flex direction to stack the elements vertically */
+        align-items: flex-start; /* Align items to the left side */
+        padding: 10px; /* Reduce padding to save space */
+    }
+
+    .navbar-title {
+        margin-bottom: 10px; /* Add some margin at the bottom of the title */
+    }
+
+    .navbar-links {
+        margin-top: 10px; /* Add some margin at the top of the links */
+    }
+
+    .navbar-links a {
+        font-size: 20px; /* Reduce font size of the links */
+        margin-left: 0; /* Remove margin between the links */
+        margin-right: 20px; /* Add margin to the right of the links */
+    }
+}
+
+/* Media query for responsiveness: When the screen width is 900px or less */
+@media screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column; /* Change flex direction to stack the elements vertically */
+        align-items: flex-start; /* Align items to the left side */
+        padding: 10px; /* Reduce padding to save space */
+        width: 100%;
+    }
+
+    .navbar-title {
+        margin-bottom: 10px; /* Add some margin at the bottom of the title */
+    }
+
+    .navbar-links {
+        margin-top: 10px; /* Add some margin at the top of the links */
+    }
+
+    .navbar-links a {
+        font-size: 20px; /* Reduce font size of the links */
+        margin-left: 0; /* Remove margin between the links */
+        margin-right: 20px; /* Add margin to the right of the links */
+    }
+}
+
