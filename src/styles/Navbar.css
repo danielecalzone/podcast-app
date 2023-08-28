@@ -1,86 +1,61 @@
 /* Styles for the navbar */
 .navbar {
-    display: flex; /* Use flexbox to arrange the content */
-    justify-content: space-between; /* Space the items evenly between the start and end of the container */
-    align-items: center; /* Center the items vertically within the navbar */
-    background-color: #fff; /* Set a cool background color for the navbar */
-    padding: 10px 20px; /* Add padding to the navbar */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the navbar */
-    position: sticky; /* Make the navbar stick to the top of the viewport when scrolling */
-    top: 0; /* Position the navbar at the top of the viewport */
-    left: 0; /* Position the navbar at the left side of the viewport */
-    z-index: 999; /* Set a high z-index to ensure the navbar is on top of other elements */
-    max-width: 100%; /* Set the maximum width of the navbar to cover the entire viewport */
-    overflow: hidden; /* Hide any content that overflows the navbar horizontally */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    max-width: 100%;
+    overflow: hidden;
 }
-
 
 /* Styles for the navbar title */
 .navbar-title {
-    color: #fff; /* Set the text color for the title to white */
-    font-size: 24px; /* Set the font size of the title */
-    font-weight: bold; /* Set the font weight of the title to bold */
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* Styles for the navbar links container */
 .navbar-links {
-    display: flex; /* Use flexbox to arrange the links horizontally */
-    align-items: center; /* Center the links vertically within the navbar */
+    display: flex;
+    align-items: center;
 }
 
 /* Styles for the navbar links */
 .navbar-links a {
-    color: #2577BE; /* Set the text color for the links */
-    margin-left: 20px; /* Add spacing between the links */
-    text-decoration: none; /* Remove the default underline from the links */
-    font-size: 24px; /* Set the font size of the links */
-    font-weight: bold; /* Set the font weight of the links to bold */
+    color: #2577BE;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-/* Media query for responsiveness: When the screen width is 900px or less */
+/* Media query for responsiveness */
 @media screen and (max-width: 900px) {
     .navbar {
-        flex-direction: column; /* Change flex direction to stack the elements vertically */
-        align-items: flex-start; /* Align items to the left side */
-        padding: 10px; /* Reduce padding to save space */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        width: 100%; /* Make the navbar full width */
     }
 
     .navbar-title {
-        margin-bottom: 10px; /* Add some margin at the bottom of the title */
+        margin-bottom: 10px;
     }
 
     .navbar-links {
-        margin-top: 10px; /* Add some margin at the top of the links */
+        margin-top: 10px;
     }
 
     .navbar-links a {
-        font-size: 20px; /* Reduce font size of the links */
-        margin-left: 0; /* Remove margin between the links */
-        margin-right: 20px; /* Add margin to the right of the links */
+        font-size: 20px;
+        margin-left: 0;
+        margin-right: 20px;
     }
 }
-
-/* Media query for responsiveness: When the screen width is 900px or less */
-@media screen and (max-width: 900px) {
-    .navbar {
-        flex-direction: column; /* Change flex direction to stack the elements vertically */
-        align-items: flex-start; /* Align items to the left side */
-        padding: 10px; /* Reduce padding to save space */
-        width: 100%;
-    }
-
-    .navbar-title {
-        margin-bottom: 10px; /* Add some margin at the bottom of the title */
-    }
-
-    .navbar-links {
-        margin-top: 10px; /* Add some margin at the top of the links */
-    }
-
-    .navbar-links a {
-        font-size: 20px; /* Reduce font size of the links */
-        margin-left: 0; /* Remove margin between the links */
-        margin-right: 20px; /* Add margin to the right of the links */
-    }
-}
-

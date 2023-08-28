@@ -1,50 +1,63 @@
-// Import necessary dependencies and styles
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'; // Import Link to handle navigation
-import podcastService from '../hooks/podcastService'; // Import the podcastService to fetch data
-import LoadingIndicator from "./LoadingIndicator"; // Import the LoadingIndicator component
-import '../styles/EpisodeDetails.css'; // Import the EpisodeDetails.css styles
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import podcastService from '../hooks/podcastService';
+import LoadingIndicator from "./LoadingIndicator";
+import '../styles/EpisodeDetails.css';
+import { useDispatch, useSelector } from "react-redux";
+import { setPodcastData } from '../redux/podcastEpisodeSlice';
 
 const EpisodeDetails = () => {
-    // Get the podcastId and episodeId from the URL parameters using useParams hook
     const { podcastId, episodeId } = useParams();
+    const dispatch = useDispatch();
+    const { podcast, episode } = useSelector((state) => state.podcastEpisode);
 
-    // Define state variables to store podcast and episode data
-    const [podcast, setPodcast] = useState(null);
-    const [episode, setEpisode] = useState(null);
-
-    // Use the useEffect hook to fetch podcast and episode data when component mounts
     useEffect(() => {
-        // Fetch the podcast details and episodes from the podcastService using podcastId
-        podcastService.getPodcastDetails(podcastId).then((data) => {
-            if (data && data.results.length > 0) {
-                // Store the podcast data in state
-                const podcastData = data.results[0];
-                setPodcast(podcastData);
+        dispatch(setPodcastData({ podcast: null, episode: null }));
 
-                // Find the selected episode by its episodeId from the fetched data
-                const selectedEpisode = data.results.slice(1).find((ep) => ep.trackId === Number(episodeId));
-                setEpisode(selectedEpisode);
-            }
-        });
-    }, [podcastId, episodeId]); // Fetch data whenever podcastId or episodeId changes
+        // Caching logic
+        const cacheKey = `podcast-${podcastId}-episode-${episodeId}`;
+        const cachedData = JSON.parse(localStorage.getItem(cacheKey));
+
+        if (
+            cachedData &&
+            Date.now() - cachedData.timestamp < 24 * 60 * 60 * 1000 &&
+            cachedData.data.podcastId === podcastId &&
+            cachedData.data.episodeId === episodeId
+        ) {
+            dispatch(setPodcastData(cachedData.data));
+        } else {
+            podcastService.getPodcastDetails(podcastId).then((data) => {
+                if (data && data.results.length > 0) {
+                    const podcastData = data.results[0];
+                    const selectedEpisode = data.results.slice(1).find((ep) => ep.trackId === Number(episodeId));
+
+                    dispatch(setPodcastData({ podcast: podcastData, episode: selectedEpisode }));
+
+                    localStorage.setItem(
+                        cacheKey,
+                        JSON.stringify({
+                            data: { podcast: podcastData, episode: selectedEpisode, podcastId, episodeId },
+                            timestamp: Date.now(),
+                        })
+                    );
+                }
+            });
+        }
+    }, [dispatch, podcastId, episodeId]);
 
     return (
         <div>
-            {/* Check if podcast and episode data is available */}
             {podcast && episode ? (
-                // Render the episode details
                 <div className="episode-details-container">
                     <div className="podcast-episode-card">
-                        {/* Link to navigate back to the podcast details page */}
+                        {/* Navigation */}
                         <Link to={`/podcast/${podcastId}`}>
-                            {/* Display the podcast artwork */}
                             <img src={podcast.artworkUrl600} alt={podcast.collectionName} />
                         </Link>
                         <div className="episode-info">
-                            {/* Link to navigate back to the podcast details page */}
+                            {/* Navigation */}
                             <Link to={`/podcast/${podcastId}`}>
-                                {/* Display the podcast title, author, and episode name */}
+                                {/* Display podcast details */}
                                 <h3>{podcast.collectionCensoredName}</h3>
                                 <p>By {podcast.artistName}</p>
                                 <h4>Description:</h4>
@@ -52,19 +65,19 @@ const EpisodeDetails = () => {
                             </Link>
                         </div>
                     </div>
-                    {/* Display the selected episode details */}
+                    {/* Display episode details */}
                     <div className="episode-details-content">
                         <h2>{episode.trackName}</h2>
                         <p>{episode.description}</p>
-                        {/* Display audio player with episode audio */}
-                        <audio controls>
+                        {/* Audio player */}
+                        <audio controls role="application">
                             <source src={episode.episodeUrl} type="audio/mpeg" />
                             Your browser does not support the audio element.
                         </audio>
                     </div>
                 </div>
             ) : (
-                // Show the LoadingIndicator if podcast and episode data is still loading
+                // Loading indicator
                 <LoadingIndicator />
             )}
         </div>

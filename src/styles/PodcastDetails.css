@@ -1,130 +1,119 @@
 /* Styles for the container of the product details page */
 .product-details-container {
-    display: flex; /* Create a flex container */
-    flex-wrap: wrap; /* Allow the flex items to wrap to the next line if needed */
-    padding: 20px; /* Add 20px padding to all sides of the container */
-    max-width: 1200px; /* Set a maximum width for the container */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
     margin: 0 auto; /* Center the container horizontally */
 }
 
 /* Styles for the podcast details card */
 .podcast-details-card {
-    flex: 0 0 calc(25% - 20px); /* Set the width of each card to 25% minus 20px for spacing */
-    display: flex; /* Create a flex container for the card */
-    flex-direction: column; /* Arrange the card elements in a column */
-    align-items: center; /* Center the items horizontally within the card */
-    margin: 10px; /* Add 10px margin on all sides of the card */
-    padding: 20px; /* Add 20px padding to all sides of the card */
-    height: 600px; /* Set a fixed height for the card */
-    background-color: #fff; /* Set the background color of the card to white */
-    border-radius: 8px; /* Add rounded corners to the card */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    flex: 0 0 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Styles for the podcast details card image */
 .podcast-details-card img {
-    width: 100%; /* Set the image width to 100% of its container */
-    max-width: 200px; /* Set a maximum width for the image */
-    height: auto; /* Automatically adjust the image height to maintain aspect ratio */
-    border-radius: 8px; /* Add rounded corners to the image */
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
 }
 
 /* Styles for the podcast details card on hover */
 .podcast-details-card:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Add elevated shadow on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Styles for the paragraphs within the podcast details card */
 .podcast-info p {
-    margin: 5px 0; /* Add 5px margin to the top and bottom of the paragraphs */
-    font-style: italic; /* Set the font styles to italic for the paragraphs */
+    margin: 5px 0;
+    font-style: italic;
 }
 
 /* Styles for the episodes container */
 .episodes-container {
-    flex: 1 1 calc(75% - 40px); /* Set the width of the episodes container to 75% minus 40px for spacing */
-    display: flex; /* Create a flex container for the episodes */
-    flex-direction: column; /* Arrange the episodes in a column */
+    flex: 1 1 calc(75% - 40px);
+    display: flex;
+    flex-direction: column;
 }
 
 /* Styles for the episodes header */
 .episodes-header {
-    padding: 10px; /* Add 10px padding to all sides of the header */
-    margin: 10px; /* Add 10px margin on all sides of the header */
-    background-color: #fff; /* Set the background color of the header to white */
-    border-radius: 8px; /* Add rounded corners to the header */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
-    text-align: left; /* Align the text to the left within the header */
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: left;
 }
 
 /* Styles for the episodes header on hover */
 .episodes-header:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Add elevated shadow on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Styles for the episodes table */
 .episodes-table {
-    flex: 1 1; /* Allow the episodes table to grow to fill the available space */
-    padding: 20px; /* Add 20px padding to all sides of the table */
-    margin: 0 10px 10px; /* Add 10px margin to the top and bottom and 0 margin to the left and right of the table */
-    background-color: #fff; /* Set the background color of the table to white */
-    border-radius: 8px; /* Add rounded corners to the table */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    flex: 1 1;
+    padding: 20px;
+    margin: 0 10px 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Styles for the episodes table on hover */
 .episodes-table:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Add elevated shadow on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Styles for the heading within the episodes table */
 .episodes-table h2 {
-    color: #2577BE; /* Set the heading color to blue */
+    color: #2577BE;
 }
 
 /* Styles for the table and its cells */
 table {
-    width: 100%; /* Set the table width to 100% of its container */
-    border-collapse: collapse; /* Collapse the table borders to avoid double borders */
-    margin-top: 20px; /* Add 20px margin to the top of the table */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 table th,
 table td {
-    padding: 10px; /* Add 10px padding to all sides of the table cells */
-    border-bottom: 1px solid #ccc; /* Add a 1px solid bottom border to separate rows */
-    text-align: left; /* Align the text to the left within the cells */
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
 }
 
 /* Styles for the table heading */
 table th {
-    text-align: left; /* Align the text to the left within the table heading cells */
-    font-weight: bold; /* Set the font weight to bold for the table heading */
+    text-align: left;
+    font-weight: bold;
 }
 
 /* Add media queries for responsiveness */
 @media screen and (max-width: 900px) {
-    .podcast-card {
-        flex: 0 0 calc(50% - 20px); /* Set the width of each card to 50% minus 20px for spacing */
-    }
-
+    .podcast-details-card,
     .episodes-container {
-        flex: 1 1 calc(50% - 20px); /* Set the width of the episodes container to 50% minus 20px for spacing */
+        flex: 0 0 calc(50% - 20px);
     }
 }
 
 @media screen and (max-width: 600px) {
-    .podcast-card {
-        flex: 0 0 100%; /* Set the width of each card to 100% for full width on small screens */
-    }
-
+    .podcast-details-card,
     .episodes-container {
-        flex: 0 0 100%; /* Set the width of the episodes container to 100% for full width on small screens */
-        margin-left: 0; /* Reset the left margin on small screens */
+        flex: 0 0 100%;
+        margin-left: 0;
     }
 }
-
-
-
-
-

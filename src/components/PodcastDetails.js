@@ -1,35 +1,28 @@
-// Import necessary dependencies and styles
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'; // Import Link and useParams from react-router-dom
-import podcastService from '../hooks/podcastService'; // Import the podcastService for fetching podcast details and episodes
-import LoadingIndicator from "./LoadingIndicator"; // Import the LoadingIndicator component
-import '../styles/PodcastDetails.css'; // Import the PodcastDetails.css styles
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import podcastService from '../hooks/podcastService';
+import LoadingIndicator from "./LoadingIndicator";
+import '../styles/PodcastDetails.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPodcastDetails } from '../redux/podcastDetailsSlice';
 
-const ProductDetails = () => {
-    // Extract the 'podcastId' from the URL using useParams
+const PodcastDetails = () => {
     const { podcastId } = useParams();
+    const dispatch = useDispatch();
+    const { podcast, episodes } = useSelector((state) => state.podcastDetails);
 
-    // State variables to store podcast details and episodes
-    const [podcast, setPodcast] = useState(null);
-    const [episodes, setEpisodes] = useState([]);
-
-    // useEffect hook to fetch podcast details and episodes when the component mounts or 'podcastId' changes
     useEffect(() => {
-        // Check if cached data for the specific podcast ID exists in localStorage
+        dispatch(setPodcastDetails({ podcast: null, episodes: [] })); // Reset state before fetching
+        // Caching logic
         const cachedData = JSON.parse(localStorage.getItem(`podcast-${podcastId}`));
+
         if (cachedData && Date.now() - cachedData.timestamp < 24 * 60 * 60 * 1000) {
-            // Data exists in cache and is less than a day old, use the cached data
-            setPodcast(cachedData.podcast);
-            setEpisodes(cachedData.episodes);
+            dispatch(setPodcastDetails({ podcast: cachedData.podcast, episodes: cachedData.episodes }));
         } else {
-            // Fetch the podcast details and episodes from the podcastService
             podcastService.getPodcastDetails(podcastId).then((data) => {
                 if (data && data.results.length > 0) {
                     const podcastData = data.results[0];
-                    setPodcast(podcastData);
-                    setEpisodes(data.results.slice(1)); // Exclude the first element (podcast details)
-
-                    // Cache the data for future use
+                    dispatch(setPodcastDetails({ podcast: podcastData, episodes: data.results.slice(1) }));
                     const cachedData = {
                         podcast: podcastData,
                         episodes: data.results.slice(1),
@@ -39,9 +32,8 @@ const ProductDetails = () => {
                 }
             });
         }
-    }, [podcastId]);
+    }, [dispatch, podcastId]);
 
-    // Helper function to format the duration of an episode from milliseconds to 'hh:mm:ss' format
     const formatDuration = (milliseconds) => {
         const seconds = Math.floor(milliseconds / 1000);
         const minutes = Math.floor(seconds / 60);
@@ -53,8 +45,6 @@ const ProductDetails = () => {
 
         return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
     };
-
-    // Helper function to format a date from a date string to 'dd/mm/yyyy' format
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const day = date.getDate().toString().padStart(2, '0');
@@ -63,12 +53,12 @@ const ProductDetails = () => {
         return `${day}/${month}/${year}`;
     };
 
-    // Render the component
     return (
         <div>
-            {podcast ? ( // If podcast details are available, render the podcast details and episodes
+            {podcast ? (
                 <div className="product-details-container">
                     <div className="podcast-details-card">
+                        {/* Display podcast details */}
                         <img src={podcast.artworkUrl600} alt={podcast.collectionName} />
                         <div className="podcast-info">
                             <h3>{podcast.collectionCensoredName}</h3>
@@ -94,6 +84,7 @@ const ProductDetails = () => {
                                 {episodes.map((episode) => (
                                     <tr key={episode.trackId}>
                                         <td>
+                                            {/* Link to episode details */}
                                             <Link to={`/podcast/${podcastId}/episode/${episode.trackId}`}>
                                                 {episode.trackName}
                                             </Link>
@@ -107,11 +98,11 @@ const ProductDetails = () => {
                         </div>
                     </div>
                 </div>
-            ) : ( // If podcast details are not available, render the LoadingIndicator
-                <LoadingIndicator />
+            ) : (
+                <LoadingIndicator /> // Display loading indicator
             )}
         </div>
     );
 };
 
-export default ProductDetails;
+export default PodcastDetails;

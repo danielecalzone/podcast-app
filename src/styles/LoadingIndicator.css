@@ -1,33 +1,33 @@
 /* Styles for the loading indicator container */
 .loading-indicator-container {
-    position: fixed; /* Position the container fixed to the viewport */
-    top: 0; /* Place the container at the top of the viewport */
-    left: 0; /* Place the container at the left side of the viewport */
-    width: 100%; /* Set the width of the container to cover the entire viewport */
-    height: 100%; /* Set the height of the container to cover the entire viewport */
-    display: flex; /* Use flexbox to arrange the content */
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    background-color: rgba(0, 0, 0, 0.5); /* Set the background color to a semi-transparent black */
-    z-index: 9999; /* Set a high z-index to ensure the loading indicator is on top of other elements */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999; /* Ensure loading indicator is on top */
 }
 
-/* Styles for the loading spinner inside the loading indicator container */
+/* Styles for the loading spinner */
 .loading-spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3); /* Add a border with a semi-transparent white color */
-    border-top: 4px solid #fff; /* Add a top border with a solid white color */
-    border-radius: 50%; /* Make the spinner circular by adding rounded corners */
-    width: 40px; /* Set the width of the spinner */
-    height: 40px; /* Set the height of the spinner */
-    animation: spin 1s linear infinite; /* Add a spinning animation to the spinner */
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite; /* Add a spinning animation */
 }
 
-/* Keyframes for the spin animation of the loading spinner */
+/* Keyframes for the spin animation */
 @keyframes spin {
     0% {
-        transform: rotate(0deg); /* Rotate the spinner 0 degrees at the start of the animation */
+        transform: rotate(0deg);
     }
     100% {
-        transform: rotate(360deg); /* Rotate the spinner 360 degrees (full circle) at the end of the animation */
+        transform: rotate(360deg);
     }
 }

@@ -1,13 +1,11 @@
-// Import necessary dependencies and styles
 import React from 'react';
-import '../styles/LoadingIndicator.css'; // Import the LoadingIndicator.css styles
+import '../styles/LoadingIndicator.css';
 
 const LoadingIndicator = () => {
     return (
-        // Container to hold the loading indicator
-        <div className="loading-indicator-container">
-            {/* SVG spinner to represent the loading animation */}
-            <div className="loading-spinner" />
+        <div data-testid="loading-indicator" className="loading-indicator-container">
+            {/* Loading spinner */}
+            <div data-testid="loading-spinner" className="loading-spinner" />
         </div>
     );
 };

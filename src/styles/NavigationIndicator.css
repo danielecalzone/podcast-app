@@ -1,20 +1,22 @@
 /* Styles for the navigation indicator */
 .navigation-indicator {
-    position: fixed; /* Position the indicator relative to the viewport */
-    top: 20px; /* Position the indicator 20px from the top of the viewport */
-    right: 20px; /* Position the indicator 20px from the right of the viewport */
-    width: 20px; /* Set the width of the indicator */
-    height: 20px; /* Set the height of the indicator */
-    border: 2px solid #ccc; /* Add a 2px solid border with a light gray color */
-    border-radius: 50%; /* Create a circular shape using border-radius */
-    background-color: transparent; /* Set the background color of the indicator to transparent */
-    transition: background-color 0.3s ease-in-out; /* Add a smooth transition for the background color change */
-    pointer-events: none; /* Prevent the indicator from capturing clicks (make it non-interactable) */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    pointer-events: none; /* Indicator is non-interactable */
 }
-
-/* Styles for the active state of the navigation indicator */
-.navigation-indicator.active {
-    display: block; /* Display the indicator when it's active */
-    background-color: #2577BE; /* Change the background color to blue when the indicator is active */
-    border: 2px solid #ccc; /* Keep the 2px solid border when the indicator is active */
-}
+/* Additional styles for the active state */
+/* .active class is applied to make the indicator visible */
+/* and change its background color */
+.navigation-indicator.active  {
+     display: block;
+     background-color: #2577BE;
+     /* Border is retained for consistent design */
+     border: 2px solid #ccc;
+ }

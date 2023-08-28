@@ -1,84 +1,84 @@
 /* Style for the container that holds the episode details */
 .episode-details-container {
-    display: flex; /* Use flexbox to arrange the content */
-    flex-wrap: wrap; /* Wrap the items to the next line if necessary */
-    padding: 20px; /* Add some padding around the container */
-    max-width: 1200px; /* Set a maximum width for the container */
-    margin: 0 auto; /* Center the container horizontally */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Style for the card that displays podcast and episode information */
 .podcast-episode-card {
-    flex: 0 0 calc(25% - 20px); /* Allow each card to take up 25% of the available width with some margin */
-    display: flex; /* Use flexbox to arrange the content */
-    flex-direction: column; /* Arrange the content in a column */
-    align-items: center; /* Center the items horizontally within the card */
-    margin: 10px; /* Add some margin around each card */
-    padding: 20px; /* Add padding inside the card */
-    height: 600px; /* Set a fixed height for the card */
-    background-color: #fff; /* Set the background color of the card to white */
-    border-radius: 8px; /* Add rounded corners to the card */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the card */
+    flex: 0 0 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for the podcast image inside the card */
 .podcast-episode-card img {
-    width: 100%; /* Make the image fill the entire width of the card */
-    max-width: 200px; /* Limit the maximum width of the image */
-    height: auto; /* Maintain the aspect ratio of the image */
-    border-radius: 8px; /* Add rounded corners to the image */
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
 }
 
-/* Style for the card on hover (when the user hovers over the card) */
+/* Style for the card on hover */
 .podcast-episode-card:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Add an elevated shadow effect on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Style for the episode information inside the card */
 .episode-info p {
-    margin: 5px 0; /* Add some margin above and below each paragraph */
-    font-style: italic; /* Italicize the text */
+    margin: 5px 0;
+    font-style: italic;
 }
 
 /* Style for the container that holds the main episode details */
 .episode-details-content {
-    flex: 1 1; /* Allow the content to take up the available space */
-    padding: 20px; /* Add padding inside the container */
-    margin: 10px; /* Add some margin around the container */
-    background-color: #fff; /* Set the background color of the container to white */
-    border-radius: 8px; /* Add rounded corners to the container */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the container */
+    flex: 1 1;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for the main episode details container on hover */
 .episode-details-content:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Add an elevated shadow effect on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Style for the paragraphs inside the main episode details container */
 .episode-details-content p {
-    margin: 5px 0; /* Add some margin above and below each paragraph */
+    margin: 5px 0;
 }
 
 /* Media query for responsiveness: When the screen width is 900px or less */
 @media screen and (max-width: 900px) {
     .podcast-episode-card {
-        flex: 0 0 calc(50% - 20px); /* Allow each card to take up 50% of the available width with some margin */
+        flex: 0 0 calc(50% - 20px);
     }
 
     .episode-details-content {
-        flex: 1 1 calc(50% - 20px); /* Allow the main details container to take up 50% of the available width with some margin */
+        flex: 1 1 calc(50% - 20px);
     }
 }
 
 /* Media query for responsiveness: When the screen width is 600px or less */
 @media screen and (max-width: 600px) {
     .podcast-episode-card {
-        flex: 0 0 100%; /* Allow each card to take up 100% of the available width (no margin) */
+        flex: 0 0 100%;
     }
 
     .episode-details-content {
-        flex: 0 0 100%; /* Allow the main details container to take up 100% of the available width (no margin) */
-        margin-left: 0; /* Remove the left margin to align the container with the cards */
+        flex: 0 0 100%;
+        margin-left: 0;
     }
 }

@@ -20,6 +20,7 @@ You can try the live demo of the app [here](https://podcaster-daniele-calzone.ne
 - React Router: Library for routing and navigation in a React application.
 - React Testing Library: Testing utility for testing React components.
 - Jest: JavaScript testing framework.
+- Redux: JavaScript library for managing the state of a React application. It provides a predictable and centralized way to handle application state, making it easier to manage and update data across components.
 - HTML: Markup language for structuring the app's content.
 - CSS: Styling language for visually enhancing the app.
 
@@ -52,12 +53,17 @@ This mode is recommended for deployment to production servers.
 - `/src`: Contains the source code of the app.
     - `/components`: Reusable React components.
     - `/hooks`: Custom hooks for fetching data from APIs.
+    - `/redux`: Contains the Redux-related files for managing the application state using Redux.
     - `/styles`: CSS stylesheets for styling the app.
     - `/tests`: React tests for the app.
+      - `/integration`: Integration tests that test the interaction between multiple components or modules.
+      - `/mocks`: Mock data and mock implementations used in testing.
+      - `/unit`: Unit tests that isolate and test individual functions or components.
+    - `/utils`: Contains utility functions and helper modules used across the app.
 
 ## Tests
 
-The app includes unit tests to ensure the correctness of its components and functionality. You can run the tests using the following command:
+The app includes integration and unit tests to ensure the correctness of its components and functionality. You can run the tests using the following command:
 `npm test`
 
 ## Contributing
