@@ -8,11 +8,12 @@ You can try the live demo of the app [here](https://podcaster-daniele-calzone.ne
 
 ## Features
 
--  Top Podcasts: Displays a list of 100 podcasts in various categories.
--  Podcast Details: Provides detailed information about a selected podcast, including episodes.
--  Episode Details: Allows users to view information about a specific episode and listen to it.
--  Search: Enables users to search for podcasts based on title or author.
--  Responsive Design: The app is fully responsive, providing an optimal viewing experience on different devices.
+- Top Podcasts: Displays a list of 100 podcasts in various categories.
+- Podcast Details: Provides detailed information about a selected podcast, including episodes.
+- Episode Details: Allows users to view information about a specific episode and listen to it.
+- Search: Enables users to search for podcasts based on title or author.
+- Responsive Design: The app is fully responsive, providing an optimal viewing experience on different devices.
+- Cache: Implement a 24-hour cache for recently loaded items. This cache can help reduce the load on your server and improve the app's speed by storing podcast data, episode information, and search results for 24 hours. Users can access this cached data even if they are offline or experience slower internet connectivity, ensuring a seamless experience.
 
 ## Technologies Used
 
